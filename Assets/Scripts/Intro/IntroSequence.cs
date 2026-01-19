@@ -27,7 +27,8 @@ public class IntroSequence : MonoBehaviour
 
     void Start()
     {
-        if (!IntroManager.instance.IntroPlayed)
+
+        if (!Managers.Intro.IntroPlayed)
         {
             Invoke(nameof(StartIntro), 0.3f);
         }
@@ -128,14 +129,14 @@ public class IntroSequence : MonoBehaviour
             }
         }
 
-        IntroManager.instance.IntroPlayed = true;
+        Managers.Intro.IntroPlayed = true;
     }
 
     void SkipToEnd()
     {
         SkipIntro();
 
-        IntroManager.instance.IntroPlayed = true;
+        Managers.Intro.IntroPlayed = true;
         //Debug.Log("End!");
     }
 
